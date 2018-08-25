@@ -45,11 +45,12 @@ public class Jeopardy implements ActionListener {
 		frame.setLayout(new BorderLayout());
 
 		// 1. Make the frame show up
-
+		frame.setVisible(true);
 		// 2. Give your frame a title
-
+		frame.setTitle("Jeopardy");
 		// 3. Create a JPanel variable to hold the header using the createHeader method
-
+		JPanel panel= createHeader("");
+		
 		// 4. Add the header component to the quizPanel
 
 		// 5. Add the quizPanel to the frame
@@ -89,14 +90,13 @@ public class Jeopardy implements ActionListener {
 
 	private JButton createButton(String dollarAmount) {
 		// Create a new JButton
-
+		JButton button = new JButton();
 		// Set the text of the button to the dollarAmount
-
+		button.setText(dollarAmount);
 		// Increment the buttonCount (this should make the layout vertical)
-
+		buttonCount++;
 		// Return your new button instead of the temporary button
-
-		return new JButton("temporary button");
+		return button;
 	}
 
 	public void actionPerformed(ActionEvent arg0) {
@@ -123,11 +123,11 @@ public class Jeopardy implements ActionListener {
 
 	private void askQuestion(String question, String correctAnswer, int prizeMoney) {
 		// Remove this temporary message
-		JOptionPane.showMessageDialog(null, "this is where the question will be asked");
+		
 		// Use a pop up to ask the user the question
-
+		String answer1 = JOptionPane.showInputDialog("what is ");
 		// If the answer is correct
-
+		
 		// Increase the score by the prizeMoney
 
 		// Call the updateScore() method
