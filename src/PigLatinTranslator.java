@@ -1,11 +1,13 @@
 import java.awt.Dimension;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
-public class PigLatinTranslator {
+public class PigLatinTranslator implements ActionListener {
 	JButton button;
 	JFrame frame;
 	JPanel panel;
@@ -20,7 +22,9 @@ public class PigLatinTranslator {
 		text1.setPreferredSize(size1);
 		button = new JButton();
 		button.setText("translate");
+		button.addActionListener(this);
 		text2 = new JTextField();
+		
 		Dimension size2 = new Dimension(200,20);
 		text2.setPreferredSize(size2);
 		frame.setDefaultCloseOperation(frame.EXIT_ON_CLOSE);
@@ -95,5 +99,10 @@ public class PigLatinTranslator {
 			word.charAt(i)=='u')
 				return i;
 		return 0;
+	}
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		// TODO Auto-generated method stub
+		text2.setText(translate(text1.getText()));
 	}
 }
