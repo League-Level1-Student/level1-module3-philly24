@@ -20,7 +20,15 @@ public class PigLatinTranslator {
 		text1.setPreferredSize(size1);
 		button = new JButton();
 		button.setText("translate");
+		text2 = new JTextField();
+		Dimension size2 = new Dimension(200,20);
+		text2.setPreferredSize(size2);
 		frame.setDefaultCloseOperation(frame.EXIT_ON_CLOSE);
+		panel = new JPanel();
+		panel.add(text1);
+		panel.add(button);
+		panel.add(text2);
+		frame.add(panel);
 		frame.pack();
 	}
 	/**
@@ -70,6 +78,7 @@ public class PigLatinTranslator {
 			int end = i;
 			latin = latin + pigWord(s.substring(begin, end));
 		}
+		
 		return latin;
 	}
 
