@@ -16,7 +16,10 @@ public class NetflixQueue {
 		this.sortMoviesByRating();
 		return movies.get(0);
 	}
-
+	public Movie get2bestMovie() {
+		this.sortMoviesByRating();
+		return movies.get(1);
+	}
 	public void addMovie(Movie movie) {
 		movies.add(movie);
 	}
